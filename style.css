@@ -12,7 +12,7 @@
   --color-white: #FFFFFF;
   --color-black: #000000;
 
-  color: rgba(255, 255, 255, 0.87);
+  color: #000000;
   background-color: #FFFFFF;
 
   font-synthesis: none;
@@ -67,8 +67,38 @@ figure {
   margin: 0;
 }
 
+.newsletter__form {
+  padding: 1.5rem;
+  text-align: start;
+}
+
 h1 {
-  font-size: 3.2em;
+  font-size: 2.25rem;
   line-height: 1.1;
   color: var(--color-primary-black);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter__form--desc {
+  color: var(--color-primary-black-20);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.newsletter__form ul {
+  padding: 0;
+  list-style: none;
+}
+
+.newsletter__form li::before {
+  content: url("./assets/images/icon-list.svg");
+}
+
+.newsletter__form li {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-primary-black-20);
 }
