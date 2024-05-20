@@ -1,35 +1,22 @@
+import mainComponent from "./src/components/mainComponent.html";
 import "./style.css";
 
-document.querySelector("#app").innerHTML = `<section class="container">
-<div class="newsletter">
-  <div class="newsletter__image">
-    <figure>
-      <img src="./assets/images/illustration-sign-up-mobile.svg">
-    </figure>
-  </div>
+document.addEventListener('DOMContentLoaded', () => {
+  const app = document.querySelector('#app');
+  app.appendChild(mainComponent());
 
-  <div class="newsletter__content">
-    <h1>Stay updated!</h1>
-    <p class="newsletter__content--desc">Join 60,000+ product managers receiving monthly updates on:</p>
 
-    <ul>
-      <li>Produc discovery and building what matters</li>
-      <li>Measuring to ensure updates are a success</li>
-      <li>And much more!</li>
-    </ul>
+  document.querySelector('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    document.getElementById('newsletter').style.display = 'none';
+    document.getElementById('thank-you-message').style.display = 'block';
+    let email = event.target.getElementById('email_in').value;
+    document.getElementById('email_span').innerText = email;
+  });
 
-    <form class="newsletter__content--form">
-      <label for="email_in">Email address</label>
-      <input type="text" id="email_in" name="email_in" placeholder="email@company.com" required></input>
-
-      <button class="btn--submit" type="submit">Suscribe to monthly newsletter</button>
-    </form>
-
-  </div>
-</div>
-</section>`;
-
-document.querySelector('newsletter__content--form').addEventListener('submit', function(event) {
+  function dismissMessage() {
+    document.getElementById('thank-you-message').style.display = 'none';
+    document.getElementById('newsletter').style.display = 'block';
+  }
 
 });
-
