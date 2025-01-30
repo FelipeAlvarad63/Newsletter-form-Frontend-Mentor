@@ -18,7 +18,7 @@
 
             <form class="newsletter__content--form">
                 <label for="email_in">Email address</label>
-                <input type="text" id="email_in" name="email_in" placeholder="email@company.com" required></input>
+                <input type="email" id="email_in" name="email_in" placeholder="email@company.com" required></input>
 
                 <button class="btn--submit" type="submit">Suscribe to monthly newsletter</button>
             </form>
@@ -26,8 +26,13 @@
         </div>
     </div>
 
-    <div class="thank-you-message">
+    <div class="success-view" id="success-view">
+        <h2>Thanks for subscribing!</h2>
+        <p>A confirmation email has been to <span id="email_span"></span>. Please open it and click the button inside to confirm your subscrition.</p>
 
+        <button>
+            Dissmiss message
+        </button>
     </div>
 </section>
 
