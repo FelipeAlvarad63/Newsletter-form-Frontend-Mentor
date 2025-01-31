@@ -121,6 +121,20 @@ h1 {
   padding-bottom: 1rem;
 }
 
+.newsletter__content--form .input-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.newsletter__content--form .span-error {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: left;
+  display: block;
+}
+
 .newsletter__content--form label {
   display: block;
   color: var(--color-primary-black);

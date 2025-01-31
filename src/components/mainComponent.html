@@ -11,16 +11,20 @@
             <p class="newsletter__content--desc">Join 60,000+ product managers receiving monthly updates on:</p>
 
             <ul>
-                <li>Produc discovery and building what matters</li>
+                <li>Product discovery and building what matters</li>
                 <li>Measuring to ensure updates are a success</li>
                 <li>And much more!</li>
             </ul>
 
             <form class="newsletter__content--form">
-                <label for="email_in">Email address</label>
+                <div class="input-labels">
+                    <label for="email_in">Email address</label>
+                    <span class="span-error">Valid email required</span>
+                </div>
+
                 <input type="email" id="email_in" name="email_in" placeholder="email@company.com" required></input>
 
-                <button class="btn--submit" type="submit">Suscribe to monthly newsletter</button>
+                <button class="btn--submit" type="submit">Subscribe to monthly newsletter</button>
             </form>
 
         </div>
@@ -28,11 +32,11 @@
 
     <div class="success-view" id="success-view">
         <h2>Thanks for subscribing!</h2>
-        <p>A confirmation email has been to <span id="email_span"></span>. Please open it and click the button inside to confirm your subscrition.</p>
+        <p>A confirmation email has been to <span id="email_span"></span>. Please open it and click the button inside to
+            confirm your subscription.</p>
 
         <button>
-            Dissmiss message
+            Dismiss message
         </button>
     </div>
 </section>
-
