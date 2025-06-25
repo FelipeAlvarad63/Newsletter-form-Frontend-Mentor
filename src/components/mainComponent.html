@@ -2,7 +2,8 @@
     <div class="newsletter" id="newsletter">
         <div class="newsletter__image">
             <figure>
-                <img src="./assets/images/illustration-sign-up-mobile.svg">
+                <img src="./assets/images/illustration-sign-up-mobile.svg" class="d-md-none" alt="cover image for newsletter mobile">
+                <img src="./assets/images/illustration-sign-up-desktop.svg" class="d-none d-md-block" alt="cover image for newsletter desktop">
             </figure>
         </div>
 
@@ -19,7 +20,7 @@
             <form class="newsletter__content--form">
                 <div class="input-labels">
                     <label for="email_in">Email address</label>
-                    <span class="span-error">Valid email required</span>
+                    <span id="span-error" class="span-error"></span>
                 </div>
 
                 <input type="email" id="email_in" name="email_in" placeholder="email@company.com" required></input>
