@@ -79,7 +79,6 @@ img {
 }
 
 .container {
-  background-color: var(--color-white);
   max-width: 1280px;
   text-align: center;
 }
@@ -90,6 +89,7 @@ img {
   }
 
   .newsletter .container {
+    background-color: var(--color-white);
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -211,5 +211,34 @@ h1 {
   .newsletter__content {
     padding: 0 2.5rem;
     max-width: 440px;
+  }
+}
+
+.success-view {
+  height: 100vh;
+}
+
+.success-view .container {
+  height: 100%;
+}
+
+.success-view .success-content {
+  height: 100%;
+  background-color: white;
+  align-content: center;
+  padding-inline: 15px;
+}
+
+@media (min-width: 500px) {
+  .success-view .container {
+    align-content: center;
+  }
+
+  .success-view .success-content {
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    max-width: 440px;
+    margin: 0 auto;
+    height: fit-content;
   }
 }

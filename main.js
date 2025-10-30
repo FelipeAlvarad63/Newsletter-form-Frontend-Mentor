@@ -2,6 +2,7 @@ import mainComponent from "./src/components/mainComponent.html";
 import "./style.css";
 
 document.addEventListener('DOMContentLoaded', () => {
+
   const app = document.querySelector('#app');
   app.appendChild(mainComponent());
 
