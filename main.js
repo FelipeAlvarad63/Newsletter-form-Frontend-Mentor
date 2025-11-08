@@ -1,47 +1,59 @@
 import mainComponent from "./src/components/mainComponent.html";
 import "./style.css";
 
-const validateEmail = (email) => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+
   const app = document.querySelector('#app');
   app.appendChild(mainComponent());
 
-  let emailInput = document.getElementById('email_in');
+  const form = document.querySelector('form');
+  const emailInput = document.getElementById('email_in');
+  const spanError = document.getElementById('span-error');
+  const successView = document.getElementById('success-view');
+  const newsletterView = document.getElementById('newsletter');
+  const emailSpan = document.getElementById('email_span');
 
-  emailInput.addEventListener('input', () => {
-
-    console.log(validateEmail(emailInput.value));
-    if (!validateEmail(emailInput.value)) {
-      document.getElementById('span-error').innerText = 'Valid email required';
-    } else {
-      document.getElementById('span-error').innerText = '';
-    }
-  });
-
-  const successViewElement = document.getElementById('success-view');
-
-  if (successViewElement) {
-    successViewElement.style.display = 'none';
+  // Ocultar vista de éxito al inicio
+  if (successView) {
+    successView.style.display = 'none';
   }
 
-  document.querySelector('form').addEventListener('submit', function (event) {
+  // Función para validar correo
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = regex.test(email);
+
+    if (!isValid) {
+      emailInput.classList.add('is-invalid');
+      spanError.innerText = 'Valid email required';
+    } else {
+      emailInput.classList.remove('is-invalid');
+      spanError.innerText = '';
+    }
+
+    return isValid;
+  };
+
+  // Validar en tiempo real
+  emailInput.addEventListener('input', () => {
+    validateEmail(emailInput.value);
+  });
+
+  // Enviar formulario
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (validateEmail(emailInput.value)) {
-      document.getElementById('newsletter').style.display = 'none';
-      document.getElementById('success-view').style.display = 'block';
-      validateEmail();
-      document.getElementById('email_span').innerText = email;
+
+    if (validateEmail(emailInput.value) && emailInput.value !== '') {
+      newsletterView.style.display = 'none';
+      successView.style.display = 'block';
+      emailSpan.innerText = emailInput.value;
     }
   });
 
-  function dismissMessage() {
-    document.getElementById('success-view').style.display = 'none';
-    document.getElementById('newsletter').style.display = 'block';
-  }
-
+  // Puedes usar esta función cuando el usuario cierre el mensaje de éxito
+  document.getElementById('btn--dismiss').addEventListener('click', () => {
+    successView.style.display = 'none';
+    newsletterView.style.display = 'flex';
+  })
 });
