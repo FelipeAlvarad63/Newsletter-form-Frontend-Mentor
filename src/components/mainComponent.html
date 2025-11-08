@@ -27,7 +27,7 @@
 
                 <input type="email" id="email_in" name="email_in" placeholder="email@company.com" required></input>
 
-                <button class="btn--submit" type="submit">Subscribe to monthly newsletter</button>
+                <button id="btn--submit" class="btn-primary" type="submit">Subscribe to monthly newsletter</button>
             </form>
 
         </div>
@@ -37,12 +37,16 @@
 <section class="success-view" id="success-view">
     <div class="container">
         <div class="success-content">
-            <h2>Thanks for subscribing!</h2>
-            <p>A confirmation email has been to <span id="email_span"></span>. Please open it and click the button
-                inside to
-                confirm your subscription.</p>
+            <div class="text-content">
+                <figure class="success__icon-check">
+                    <img src="./assets/images/icon-list.svg" alt="icon checklist">
+                </figure>
+                <h2 class="title">Thanks for subscribing!</h2>
+                <p class="success--desc">A confirmation email has been sent to <span id="email_span"></span>. Please
+                    open it and click the button inside to confirm your subscription.</p>
+            </div>
 
-            <button>
+            <button id="btn--dismiss" class="btn-primary" type="button">
                 Dismiss message
             </button>
         </div>

@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Puedes usar esta función cuando el usuario cierre el mensaje de éxito
-  const dismissMessage = () => {
+  document.getElementById('btn--dismiss').addEventListener('click', () => {
     successView.style.display = 'none';
-    newsletterView.style.display = 'block';
-  };
+    newsletterView.style.display = 'flex';
+  })
 });
