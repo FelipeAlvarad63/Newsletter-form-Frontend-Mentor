@@ -1,4 +1,4 @@
-import mainComponent from "./src/components/mainComponent.html";
+import mainComponent from "./src/components/mainComponent.js";
 import "./style.css";
 
 document.addEventListener('DOMContentLoaded', () => {
