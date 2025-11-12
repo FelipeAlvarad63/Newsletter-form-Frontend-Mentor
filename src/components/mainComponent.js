@@ -1,3 +1,7 @@
+import coverMobile from "./assets/images/illustration-sign-up-mobile.svg"
+import coverDesktop from "./assets/images/illustration-sign-up-desktop.svg"
+import iconList from "./assets/images/icon-success.svg"
+
 export default function mainComponent() {
     const template = document.createElement('template');
     template.innerHTML = `
@@ -5,9 +9,9 @@ export default function mainComponent() {
             <div class="container">
                 <div class="newsletter__image">
                     <figure>
-                        <img src="./assets/images/illustration-sign-up-mobile.svg" class="d-md-none"
+                        <img src="${coverMobile}" class="d-md-none"
                             alt="cover image for newsletter mobile">
-                        <img src="./assets/images/illustration-sign-up-desktop.svg" class="d-none d-md-block"
+                        <img src="${coverDesktop}" class="d-none d-md-block"
                             alt="cover image for newsletter desktop">
                     </figure>
                 </div>
@@ -42,7 +46,7 @@ export default function mainComponent() {
                 <div class="success-content">
                     <div class="text-content">
                         <figure class="success__icon-check">
-                            <img src="./assets/images/icon-list.svg" alt="icon checklist">
+                            <img src="${iconList}" alt="icon checklist">
                         </figure>
                         <h2 class="title">Thanks for subscribing!</h2>
                         <p class="success--desc">A confirmation email has been sent to <span id="email_span"></span>. Please
