@@ -160,7 +160,7 @@ h1 {
 }
 
 .newsletter__content li::before {
-  content: url("./assets/images/icon-list.svg");
+  content: url("./src/components/assets/images/icon-list.svg");
 }
 
 .newsletter__content li {
