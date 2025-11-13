@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
-import htmlComponentPlugin from './vite-plugin-html-components.js';
 
 export default defineConfig({
-  // assetsInclude: ['**/*.html'],
-  plugins: [htmlComponentPlugin()]
+  plugins: [],
+  base: 'https://felipealvarad63.github.io/Newsletter-form-Frontend-Mentor/'
 });
