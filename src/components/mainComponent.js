@@ -58,7 +58,7 @@ export default function mainComponent() {
                     </button>
                 </div>
             </div>
-        </section>)
+        </section>
 `;
 
     return template.content.cloneNode(true);
